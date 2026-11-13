@@ -20,10 +20,16 @@ export function AIWidget() {
     const vapi = new Vapi(publicKey)
     vapiRef.current = vapi
 
-    vapi.on('call-start', () => setStatus('active'))
+    vapi.on('call-start', () => {
+      setStatus('active')
+      setErrorMessage('')
+    })
+
     vapi.on('call-end', () => setStatus('idle'))
+
     vapi.on('speech-start', () => setStatus('speaking'))
     vapi.on('speech-end', () => setStatus('active'))
+
     vapi.on('error', () => {
       setStatus('error')
       setErrorMessage('Connection failed. Please try again.')
@@ -49,7 +55,9 @@ export function AIWidget() {
       await vapiRef.current.start(assistantId)
     } catch {
       setStatus('error')
-      setErrorMessage('Could not start the call. Check your microphone permission.')
+      setErrorMessage(
+        'Could not start the call. Check your microphone permission.'
+      )
     }
   }
 
@@ -71,36 +79,61 @@ export function AIWidget() {
       {open && (
         <div className="ai-panel">
           <div className="ai-panel-head">
-            <div className="ai-avatar"><AudioLines size={22} /></div>
+            <div className="ai-avatar">
+              <AudioLines size={22} />
+            </div>
+
             <div>
               <strong>BuildWithHaseeb AI</strong>
-              <span><i className="ai-online-dot" /> AI Receptionist · 24/7</span>
+              <span>
+                <i className="ai-online-dot" /> AI Receptionist · 24/7
+              </span>
             </div>
-            <button className="ai-close" onClick={() => setOpen(false)} aria-label="Close">
+
+            <button
+              className="ai-close"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+            >
               <X size={18} />
             </button>
           </div>
 
           <div className="ai-panel-body">
             <div className="ai-orb">
-              <div className={`ai-orb-core ${status}`}><AudioLines size={34} /></div>
+              <div className={`ai-orb-core ${status}`}>
+                <AudioLines size={34} />
+              </div>
               <span className="ai-orb-ring ring-one" />
               <span className="ai-orb-ring ring-two" />
             </div>
 
             <h3>Let’s talk business.</h3>
-            <p>Have a project in mind? Talk to our AI assistant and explore how we can help your business grow.</p>
+
+            <p>
+              Have a project in mind? Talk to our AI assistant and explore
+              how we can help your business grow.
+            </p>
 
             <div className={`ai-status ${status}`}>
               <span className="ai-status-dot" />
               {statusText}
             </div>
 
-            {status === 'error' && <p className="ai-error">{errorMessage}</p>}
+            {status === 'error' && (
+              <p className="ai-error">{errorMessage}</p>
+            )}
 
-            {(status === 'active' || status === 'speaking' || status === 'connecting') && (
+            {(status === 'active' ||
+              status === 'speaking' ||
+              status === 'connecting') && (
               <div className={`ai-wave ${status}`} aria-label={statusText}>
-                {Array.from({ length: 25 }, (_, i) => <i key={i} style={{ animationDelay: `${i * 0.045}s` }} />)}
+                {Array.from({ length: 25 }, (_, i) => (
+                  <i
+                    key={i}
+                    style={{ animationDelay: `${i * 0.045}s` }}
+                  />
+                ))}
               </div>
             )}
 
@@ -114,19 +147,26 @@ export function AIWidget() {
               </button>
             )}
 
-            <span className="ai-privacy">Your conversation is handled securely.</span>
+            <span className="ai-privacy">
+              Your conversation is handled securely.
+            </span>
           </div>
         </div>
       )}
 
       <button
-        className={`ai-float-button ${open ? 'is-open' : ''} ${status === 'active' || status === 'speaking' ? 'is-live' : ''}`}
+        className={`ai-float-button ${open ? 'is-open' : ''} ${
+          status === 'active' || status === 'speaking' ? 'is-live' : ''
+        }`}
         onClick={() => setOpen(v => !v)}
-        aria-label={open ? 'Close AI voice assistant' : 'Talk to our AI assistant'}
+        aria-label={
+          open ? 'Close AI voice assistant' : 'Talk to our AI assistant'
+        }
       >
         {open ? <X size={24} /> : <Mic size={24} />}
         {!open && <span className="ai-float-pulse" />}
       </button>
+
       <span className="ai-float-label">Talk to AI</span>
     </div>
   )
