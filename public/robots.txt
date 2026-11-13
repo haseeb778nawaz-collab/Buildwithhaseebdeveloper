@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://buildwithhaseebthedev.vercel.app/sitemap.xml
