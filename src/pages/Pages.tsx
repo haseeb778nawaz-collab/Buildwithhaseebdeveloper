@@ -161,9 +161,7 @@ export function Services() {
               <p>{s.detail}</p>
 
               <div className="tag-row">
-                {s.tags.map(t => (
-                  <b key={t}>{t}</b>
-                ))}
+                {(s.tags ?? []).map(t => <b key={t}>{t}</b>)}
               </div>
             </div>
 
