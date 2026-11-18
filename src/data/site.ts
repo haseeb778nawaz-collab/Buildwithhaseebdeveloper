@@ -6,7 +6,21 @@ export const services = [
   { n: '05', title: 'Full-Stack & SaaS Development', desc: 'Web applications, dashboards, APIs, authentication, and database-backed products.', detail: 'Build the product foundations: frontend experiences, backend services, data models, and integrations.', tags: ['React', 'Node.js', 'Python'] },
   { n: '06', title: 'E-commerce Development', desc: 'Tailored online shopping experiences with product management and checkout integrations.', detail: 'Create clear product discovery and shopping flows with the integrations appropriate to your business.', tags: ['Catalogues', 'Checkout', 'Storefronts'] },
   { n: '07', title: 'API & AI Integrations', desc: 'Connect applications, third-party services, and AI capabilities through practical integrations.', detail: 'Make systems work together through well-defined APIs, thoughtful error handling, and useful automation.', tags: ['REST APIs', 'OpenAI API', 'Third-party tools'] },
-  { n: '08', title: 'Guest Posting & SEO Outreach', desc: 'Support content outreach and digital visibility through relevant publishing opportunities.', detail: 'Organize relevant outreach and publishing workflows without promising rankings or guaranteed outcomes.', tags: ['Research', 'Outreach', 'Publishing'] }
+  { n: '08', title: 'Guest Posting & SEO Outreach', desc: 'Support content outreach and digital visibility through relevant publishing opportunities.', detail: 'Organize relevant outreach and publishing workflows without promising rankings or guaranteed outcomes.', tags: ['Research', 'Outreach', 'Publishing'] },
+  {
+  number: "09",
+  title: "Android App Development",
+  description:
+    "Android application development focused on useful features, intuitive user experiences, and reliable functionality for businesses and digital products.",
+  category: "Mobile Development",
+  features: [
+    "Android application development",
+    "User-friendly mobile interfaces",
+    "API and backend integration",
+    "Testing and performance improvements",
+    "App maintenance and updates"
+  ]
+}
 ]
 
 export type Project = {
@@ -32,7 +46,7 @@ export const projects: Project[] = [
   { title: 'StackIt.io', category: 'SaaS', description: 'A project management SaaS for organizing tasks and teams.', url: 'https://stackit-io.vercel.app/', kind: 'LIVE', tech: ['SaaS', 'Dashboard'],image: '/projects/images/stackit.png' },
   { title: 'Verdant Dental Studio', category: 'Web Development', description: 'A modern dental clinic website presenting services and an appointment enquiry experience.', url: 'https://verdant-dental-studio.vercel.app/', kind: 'Demo', tech: ['React', 'Forms'],image: '/projects/images/verdant-dental-studio.png' }
 ]
-export const categories = ['All', 'AI Automation', 'Fintech', 'Travel', 'Food', 'Wellness', 'E-commerce', 'SaaS', 'Web Development', 'Social']
+export const categories = ['All', 'Android Applications', 'AI Automation', 'Fintech', 'Travel', 'Food', 'Wellness', 'E-commerce', 'SaaS', 'Web Development', 'Social']
 export const technologies = {
   Frontend: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
   Backend: ['Node.js', 'Express.js', 'Python', 'Django', 'Flask', 'REST APIs'],
