@@ -7,20 +7,19 @@ export const services = [
   { n: '06', title: 'E-commerce Development', desc: 'Tailored online shopping experiences with product management and checkout integrations.', detail: 'Create clear product discovery and shopping flows with the integrations appropriate to your business.', tags: ['Catalogues', 'Checkout', 'Storefronts'] },
   { n: '07', title: 'API & AI Integrations', desc: 'Connect applications, third-party services, and AI capabilities through practical integrations.', detail: 'Make systems work together through well-defined APIs, thoughtful error handling, and useful automation.', tags: ['REST APIs', 'OpenAI API', 'Third-party tools'] },
   { n: '08', title: 'Guest Posting & SEO Outreach', desc: 'Support content outreach and digital visibility through relevant publishing opportunities.', detail: 'Organize relevant outreach and publishing workflows without promising rankings or guaranteed outcomes.', tags: ['Research', 'Outreach', 'Publishing'] },
-  {
-  number: "09",
-  title: "Android App Development",
-  description:
-    "Android application development focused on useful features, intuitive user experiences, and reliable functionality for businesses and digital products.",
-  category: "Mobile Development",
-  features: [
-    "Android application development",
-    "User-friendly mobile interfaces",
-    "API and backend integration",
-    "Testing and performance improvements",
-    "App maintenance and updates"
+ {
+  n: '09',
+  title: 'Android App Development',
+  desc: 'Android application development focused on useful features, intuitive user experiences, and reliable functionality for businesses and digital products.',
+  detail: 'From Android application development and user-friendly mobile interfaces to API integration, testing, performance improvements, and ongoing app maintenance.',
+  tags: [
+    'Android Apps',
+    'Mobile UI',
+    'API Integration',
+    'App Testing',
+    'Maintenance'
   ]
-}
+},
 ]
 
 export type Project = {
